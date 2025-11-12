@@ -266,10 +266,10 @@ train_transform = transforms.Compose([
     transforms.Resize(IMAGE_SIZE),  # 调整大小
     transforms.ToTensor(),  # 转为张量 [0,1]
     # 数据增强（注释掉；可启用以防过拟合）
-    # transforms.RandomRotation(30),
+    transforms.RandomRotation(30),
     # transforms.RandomHorizontalFlip(),
-    # transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),  # ImageNet归一化
+    transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),  # ImageNet标准化
 ])
 
 val_test_transform = transforms.Compose([
@@ -356,10 +356,10 @@ for epoch in range(EPOCHS):
     # 打印进度
     print(f'Epoch {epoch + 1}/{EPOCHS} - Train Loss: {train_loss:.4f}, Train Acc: {train_acc:.2f}% - Val Loss: {val_loss:.4f}, Val Acc: {val_acc:.2f}%')
 
-    # 早停检查（注释掉；可启用）
-    if early_stop(val_acc / 100, model):  # 传acc分数（0-1）
-        print(f'Early stopping at epoch {epoch + 1}')
-        break
+    # # 早停检查（注释掉；可启用）
+    # if early_stop(val_acc / 100, model):  # 传acc分数（0-1）
+    #     print(f'Early stopping at epoch {epoch + 1}')
+    #     break
 
 print('Training complete!')  # 训练结束
 
