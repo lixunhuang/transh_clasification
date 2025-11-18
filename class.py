@@ -118,8 +118,8 @@ class GarbageClassifier(nn.Module):
         # Load pretrained MobileNetV2 without top
         self.mobilenet = models.mobilenet_v2(pretrained=True)
         self.mobilenet.classifier = nn.Identity()  # Remove the classifier
-        self.mobilenet.features[0][0] = nn.Conv2d(3, 32, kernel_size=3, stride=2, padding=1,
-                                                  bias=False)  # Adjust if needed, but pretrained should work
+        # self.mobilenet.features[0][0] = nn.Conv2d(3, 32, kernel_size=3, stride=2, padding=1,
+        #                                           bias=False)  # Adjust if needed, but pretrained should work
 
         # Freeze the backbone
         for param in self.mobilenet.parameters():
