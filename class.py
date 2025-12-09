@@ -36,9 +36,20 @@ IMAGE_CHANNELS = 3
 base_path = "garbage_classification/"
 
 # Dictionary to save our 12 classes
-categories = {0: 'paper', 1: 'cardboard', 2: 'plastic', 3: 'metal', 4: 'trash', 5: 'battery',
-              6: 'shoes', 7: 'clothes', 8: 'green-glass', 9: 'brown-glass', 10: 'white-glass',
-              11: 'biological'}
+categories = categories = {
+    0: 'battery',
+    1: 'biological',
+    2: 'brown-glass',
+    3: 'cardboard',
+    4: 'clothes',
+    5: 'green-glass',
+    6: 'metal',
+    7: 'paper',
+    8: 'plastic',
+    9: 'shoes',
+    10: 'trash',
+    11: 'white-glass'
+}
 
 print('defining constants successful!')
 # %% md

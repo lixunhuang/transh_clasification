@@ -13,9 +13,20 @@ IMAGE_HEIGHT = 224
 IMAGE_SIZE = (IMAGE_WIDTH, IMAGE_HEIGHT)
 
 # Categories (match your training code)
-categories = {0: 'paper', 1: 'cardboard', 2: 'plastic', 3: 'metal', 4: 'trash', 5: 'battery',
-              6: 'shoes', 7: 'clothes', 8: 'green-glass', 9: 'brown-glass', 10: 'white-glass',
-              11: 'biological'}
+categories = {
+    0: 'battery',
+    1: 'biological',
+    2: 'brown-glass',
+    3: 'cardboard',
+    4: 'clothes',
+    5: 'green-glass',
+    6: 'metal',
+    7: 'paper',
+    8: 'plastic',
+    9: 'shoes',
+    10: 'trash',
+    11: 'white-glass'
+}
 
 # Check for GPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
